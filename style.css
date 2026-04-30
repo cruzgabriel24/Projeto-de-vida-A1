@@ -1,23 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
 
 :root {
-    --cor-de-fundo: #1E1E1E;
-    --verde: #6FFF57;
-    --branco: #FFFFFF;
-    --botao-ativo: #3A375E;
-    --botao-inativo: rgba(58, 55, 94, 0.5);
-    --texto-fundo: rgba(58, 55, 94, 0.3);
+    --cor-de-fundo: #fafafa;
+    --verde: #2a26ff;
+    --titulo: #3d3d3d;
+    --texto-btn: #eeeeee;
+    --botao-ativo: #3f3985;
+    --botao-inativo: rgba(34, 27, 114, 0.5);
+    --texto-fundo: rgba(33, 27, 99, 0.3);
 }
 
 body {
     background-color: var(--cor-de-fundo);
-    color: var(--branco);
-    font-family: 'Chakra Petch', sans-serif;
+    color: var(--titulo);
+    font-family: 'American Typewriter, serif';
     height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 400;
 }
 
 .conteudo-principal {
@@ -43,9 +45,9 @@ body {
 }
 
 .botao {
-    font-family: "Chakra Petch", sans-serif;
+    font-family: 'American Typewriter, serif';
     background-color: var(--botao-inativo);
-    color: var(--branco);
+    color: var(--texto-btn);
     display: flex;
     justify-content: center;
     padding: 1.2em;
@@ -58,6 +60,7 @@ body {
     border-top: none;
     transition: all 0.3s ease;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .botao:hover {
