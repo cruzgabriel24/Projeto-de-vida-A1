@@ -1,25 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
 :root {
-    --cor-de-fundo: #fafafa;
-    --verde: #2a26ff;
-    --titulo: #3d3d3d;
-    --texto-btn: #eeeeee;
-    --botao-ativo: #3f3985;
-    --botao-inativo: rgba(34, 27, 114, 0.5);
-    --texto-fundo: rgba(33, 27, 99, 0.3);
+    --cor-de-fundo: #0A0A0A;
+    --destaque: #FF3366;
+    --branco: #FFFFFF;
+    --botao-ativo: #1A1A2E;
+    --botao-inativo: rgba(26, 26, 46, 0.6);
+    --texto-fundo: rgba(26, 26, 46, 0.4);
 }
 
 body {
     background-color: var(--cor-de-fundo);
-    color: var(--titulo);
-    font-family: 'American Typewriter, serif';
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 400;
+    color: var(--branco);
+    font-family: 'Inter', sans-serif;
 }
 
 .conteudo-principal {
@@ -27,66 +20,144 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 800px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px;
 }
 
 .titulo-principal {
-    text-align: center;
+    text-align: left;
     width: 100%;
-    font-size: 36px;
-    margin-bottom: 40px;
+    font-size: 32px;
 }
 
 .titulo-principal span {
-    color: var(--verde);
+    color: var(--destaque);
+}
+
+.cursor {
+    display: inline-block;
+    animation: piscar 0.7s infinite;
+    font-weight: bold;
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .botao {
-    font-family: 'American Typewriter, serif';
+    font-family: 'Inter', sans-serif;
     background-color: var(--botao-inativo);
-    color: var(--texto-btn);
+    color: var(--branco);
     display: flex;
     justify-content: center;
-    padding: 1.2em;
-    font-size: 20px;
+    padding: 1em;
+    font-size: 18px;
+    font-weight: 600;
     align-items: center;
     width: 100%;
     border-bottom: 4px solid var(--botao-ativo);
     border-left: 2px solid var(--botao-ativo);
     border-right: 2px solid var(--botao-ativo);
     border-top: none;
-    transition: all 0.3s ease;
     cursor: pointer;
-    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .botao:hover {
-    transform: scale(1.05);
+    background-color: var(--botao-ativo);
+    transform: scale(1.02);
 }
 
 .botao:first-child {
     border-radius: 40px 40px 0 0;
 }
 
-.botao:last-child {
+.botoes {
+    display: block;
+}
+
+.botao.ativo {
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--destaque);
+}
+
+.abas-textos {
+    background-color: var(--texto-fundo);
+    padding: 40px;
     border-radius: 0 0 40px 40px;
 }
 
-.botoes {
+.aba-conteudo.ativo {
     display: block;
-    width: 100%;
-    max-width: 450px;
+    animation: fadeIn 0.5s ease;
 }
 
-.cursor {
-    display: inline-block;
-    animation: piscar 1s step-end infinite;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-@keyframes piscar {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+.aba-conteudo {
+    display: none;
+}
+
+.aba-conteudo-titulo-principal {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.aba-conteudo-titulo-secundario {
+    text-align: center;
+    color: var(--destaque);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.contador {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contador-digito {
+    padding: 0 16px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.contador-digito-numero {
+    font-size: 80px;
+    margin: 0;
+    font-weight: 900;
+    color: var(--destaque);
+}
+
+.contador-digito-texto {
+    color: var(--branco);
+    font-size: 20px;
+    margin: 0;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+    .botoes {
+        display: flex;
+    }
+
+    .botao:first-child {
+        border-radius: 40px 0 0 0;
+    }
+
+    .botao:last-child {
+        border-radius: 0 40px 0 0;
+    }
 }
